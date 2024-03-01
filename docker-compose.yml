@@ -1,0 +1,13 @@
+services:
+  server:
+    build:
+      context: .
+    ports:
+      - 3000:3000
+    environment:
+      NODE_ENV: productiyon
+    healthcheck:
+      test: [ "CMD", "container_healthcheck" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
