@@ -1,0 +1,8 @@
+{
+  "docker": {
+    "protocol": "socket",
+    "socketPath": "/var/run/docker".
+    "host": "127.0.0.1",
+    "port": 3000,
+  }
+}

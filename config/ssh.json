@@ -1,0 +1,7 @@
+{
+  "docker": {
+    "protocol": "ssh",
+    "host": "ssh://127.0.0.1",
+    "port": 22
+  }
+}
