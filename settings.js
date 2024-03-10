@@ -1,5 +1,7 @@
 var path = require('path');
- var nconf = require('nconf');
+var nconf = require('nconf');
+
+console.log(path.join(__dirname, 'config'));
 
   //
   //  any overrides
@@ -25,7 +27,7 @@ var path = require('path');
   //
   nconf.file(name, {
     file: 'config.json',
-    dir: path.join(__dirname, 'config')),
+    dir: path.join(__dirname, 'config'),
     search: true
   });
 

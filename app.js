@@ -1,14 +1,15 @@
 var express = require('express');
-var config = require('config');
+var setting = require('setting');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var handlebars = require('express-handlebars');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var dockerHelper = require('./services/dockerhelper');
 
 var app = express();
-
+global.appRoot = path.resolve(__dirname);
 app.use(logger('dev'));
 app.use(express.json());
 
@@ -27,5 +28,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
-console.log(config.get('docker'));
+var c=dockerHelper.createConnection();
+console.lofg(c.version());
+console.log(setting.get('docker'));
 module.exports = app;
