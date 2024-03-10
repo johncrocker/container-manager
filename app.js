@@ -1,5 +1,5 @@
 var express = require('express');
-var setting = require('setting');
+var settings = require('./settings.js');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
@@ -29,6 +29,5 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 var c=dockerHelper.createConnection();
-console.lofg(c.version());
-console.log(setting.get('docker'));
+console.log(settings.get('docker'));
 module.exports = app;

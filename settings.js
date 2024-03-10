@@ -1,7 +1,6 @@
 var path = require('path');
 var nconf = require('nconf');
 
-console.log(path.join(__dirname, 'config'));
 
   //
   //  any overrides
@@ -17,16 +16,16 @@ console.log(path.join(__dirname, 'config'));
   nconf.env().argv();
 
   //
-  // Values in `config.json`
+  // Values in `default.json`
   //
-  nconf.file(path.join(__dirname, 'config', 'config.json'));
-
+  nconf.file(path.join(__dirname, 'config', 'default.json'));
+console.log(path.join(__dirname, 'config', 'default.json'));
   //
   // Or searching from a base directory.
   // Note: `name` is optional.
   //
-  nconf.file(name, {
-    file: 'config.json',
+  nconf.file({
+    file: 'default.json',
     dir: path.join(__dirname, 'config'),
     search: true
   });
