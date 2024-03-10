@@ -5,8 +5,8 @@
   "license": "Apache-2.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
-    "start-dev": "DEBUG=container-nanager:* nodemon ./bin/www"
+    "start": "NODE_ENV=production;node ./bin/www",
+    "start-dev": "NODE_ENV=developmemt;DEBUG=container-nanager:* nodemon ./bin/www"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
@@ -24,6 +24,7 @@
     "http-errors": "~1.6.3",
     "js-yaml": "^3.3.0",
     "morgan": "~1.9.1",
+    "nconf": "^0.12.1",
     "ono": "^5.0.1",
     "openapi-sampler": "^1.0.0-beta.15",
     "swagger-ui-express": "^4.0.2",
